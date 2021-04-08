@@ -32,7 +32,7 @@ while (armeUser != `bois` && armeUser != `fer` && armeUser != `magique`) {
   armeUser = prompt(`Veuillez choisir votre arme: bois, fer ou magique`);
 }
 
-console.log(`Vous avez choisi ${armeUser}`);
+console.log(`Vous avez choisi arme ${armeUser}`);
 
 let armureUser;
 
@@ -40,7 +40,7 @@ while (armureUser != `bois` && armureUser != `fer` && armureUser != `magique`) {
   armureUser = prompt("Veuillez choisir votre armure: bois, fer ou magique");
 }
 
-console.log(`Vous avez choisi ${armureUser}`);
+console.log(`Vous avez choisi armure ${armureUser}`);
 
 console.log("le combat va commencer");
 
@@ -50,37 +50,6 @@ let play = 1;
 player.dommages = arme[armeUser];
 player.armure = armure[armureUser];
 
-/*while (maitreDonjon.pointVie > 0 && player.pointVie > 0) {
-  if (play % 2 == 0) {
-    maitreDonjon.pointVie = maitreDonjon.pointVie - degatsMaitreDonjon;
-    console.log(
-      `le joueur attaque et il te reste ${maitreDonjon.pointVie} de point de vie au maitre du Donjon`
-    );
-  } else {
-    player.pointVie = player.pointVie - degatsPlayer;
-    console.log(
-      `le maitre de Donjon attaque et il te reste ${player.pointVie} de point de vie au joueur`
-    );
-  }
-  play++;
-}
-
-let degatsMaitreDonjon = player.dommages - maitreDonjon.armure;
-if (degatsMaitreDonjon > 0) {
-  console.log(`Le joueur attaque et il te reste ${maitreDonjon.pointVie}`);
-} else {
-  console.log(`Le joueur n'inflige pas de dégats`);
-}
-
-let degatsPlayer = maitreDonjon.dommages - player.armure;
-if (degatsPlayer > 0) {
-  console.log(
-    `le maitre du donjon vous attaque et il te reste ${player.pointVie}`
-  );
-} else {
-  console.log(`le maitre du donjon n'inflige pas de dégats`);
-}*/
-
 let degatsMaitreDonjon = player.dommages - maitreDonjon.armure;
 let degatsPlayer = maitreDonjon.dommages - player.armure;
 
@@ -88,18 +57,20 @@ while (maitreDonjon.pointVie > 0 && player.pointVie > 0) {
   if (play % 2 == 0) {
     maitreDonjon.pointVie = maitreDonjon.pointVie - degatsMaitreDonjon;
     if (degatsMaitreDonjon > 0) {
-      console.log(`Le joueur attaque et il te reste ${maitreDonjon.pointVie}`);
+      console.log(
+        `Le joueur attaque et il reste ${maitreDonjon.pointVie} de points de vie au maitre du donjon`
+      );
     } else {
-      console.log(`Le joueur n'inflige pas de dégats`);
+      console.log(`Le joueur n'inflige pas de dégats au maitre du donjon`);
     }
   } else {
     player.pointVie = player.pointVie - degatsPlayer;
     if (degatsPlayer > 0) {
       console.log(
-        `le maitre du donjon vous attaque et il te reste ${player.pointVie}`
+        `le maitre du donjon vous attaque et il te reste ${player.pointVie} point de vie`
       );
     } else {
-      console.log(`le maitre du donjon n'inflige pas de dégats`);
+      console.log(`le maitre du donjon n'inflige pas de dégats à ton joueur`);
     }
   }
   play++;
