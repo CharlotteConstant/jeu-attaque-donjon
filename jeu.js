@@ -3,7 +3,7 @@ console.log(
 );
 
 let arme = {
-  bois: 2,
+  bois: 3,
   fer: 5,
   magique: 10,
 };
@@ -11,17 +11,17 @@ let arme = {
 let armure = {
   bois: 1,
   fer: 3,
-  margique: 5,
+  magique: 5,
 };
 
 let player = {
-  pointVie: 100,
+  pointVie: 40,
   dommages: "",
   armure: "",
 };
 
 let maitreDonjon = {
-  pointVie: 150,
+  pointVie: 50,
   dommages: 6,
   armure: 4,
 };
@@ -58,19 +58,19 @@ while (maitreDonjon.pointVie > 0 && player.pointVie > 0) {
     maitreDonjon.pointVie = maitreDonjon.pointVie - degatsMaitreDonjon;
     if (degatsMaitreDonjon > 0) {
       console.log(
-        `Le joueur attaque et il reste ${maitreDonjon.pointVie} de points de vie au maitre du donjon`
+        `Vous attaquez et infligez ${degatsMaitreDonjon} de dégâts, il reste ${maitreDonjon.pointVie} de points de vie au maitre du donjon`
       );
     } else {
-      console.log(`Le joueur n'inflige pas de dégats au maitre du donjon`);
+      console.log(`Vous n'infligez pas de dégâts au maitre du donjon`);
     }
   } else {
     player.pointVie = player.pointVie - degatsPlayer;
     if (degatsPlayer > 0) {
       console.log(
-        `le maitre du donjon vous attaque et il te reste ${player.pointVie} point de vie`
+        `le maitre du donjon vous attaque et vous inflige ${degatsPlayer} de dégâts, il vous reste ${player.pointVie} point de vie`
       );
     } else {
-      console.log(`le maitre du donjon n'inflige pas de dégats à ton joueur`);
+      console.log(`le maitre du donjon ne vous inflige pas de dégâts`);
     }
   }
   play++;
@@ -78,7 +78,11 @@ while (maitreDonjon.pointVie > 0 && player.pointVie > 0) {
 
 //fin du jeu
 if (maitreDonjon.pointVie > 0) {
-  console.log(`Vous avez perdu contre le maitre du Donjon`);
+  console.log(
+    `Vous avez perdu contre le maitre du Donjon qui est bien trop fort pour vous!`
+  );
 } else if (player.pointVie > 0) {
-  console.log(`Bravo, vous avez gagné contre le maitre du Donjon`);
+  console.log(
+    `Bravo, vous avez gagné contre le maitre du Donjon! Recommencez pour être sur que ce n'est pas la chance du débutant`
+  );
 }
