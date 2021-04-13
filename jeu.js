@@ -36,7 +36,7 @@ function logSubmit(event) {
   let value1 = checked1.value;
   let value2 = checked2.value;
   event.preventDefault();
-  log.textContent = `Vous avez choisi une arme ${armeP} qui infligera ${value1} de dégâts et une armure ${armureP} qui vous protegera de ${value2} points`;
+  log.textContent = `Vous avez choisi une ${armeP} qui infligera ${value1} de dégâts et une ${armureP} qui vous protegera de ${value2} points`;
 
   let tour = document.querySelector("#tour ul");
   combat(maitreDonjon, player);
@@ -70,9 +70,9 @@ function combat(maitreDonjon, player) {
     } else {
       player.pointVie = player.pointVie - degatsPlayer;
       if (degatsPlayer > 0) {
-        li.innerHTML += `le maitre du donjon vous attaque et vous inflige ${degatsPlayer} de dégâts, il vous reste ${player.pointVie} point de vie<br>`;
+        li.innerHTML += `Le maitre du donjon vous attaque et vous inflige ${degatsPlayer} de dégâts, il vous reste ${player.pointVie} point de vie<br>`;
       } else {
-        li.innerHTML += `le maitre du donjon ne vous inflige pas de dégâts<br>`;
+        li.innerHTML += `Le maitre du donjon ne vous inflige pas de dégâts<br>`;
       }
     }
     play++;
@@ -83,8 +83,8 @@ function combat(maitreDonjon, player) {
 function resultat() {
   let resultat = document.querySelector("#resultat h2");
   if (maitreDonjon.pointVie > 0) {
-    resultat.innerHTML = `Vous avez perdu contre le maitre du Donjon qui est bien trop fort pour vous!`;
+    resultat.innerHTML = `<img class="w-25" src="img/bowserWin.png"> <br> Vous avez perdu contre le maitre du Donjon qui est bien trop fort pour vous!`;
   } else if (player.pointVie > 0) {
-    resultat.innerHTML = `Bravo, vous avez gagné contre le maitre du Donjon! Recommencez pour être sur que ce n'est pas la chance du débutant!`;
+    resultat.innerHTML = `<img class="w-25" src="img/playerWin.png"> <br> Bravo, vous avez gagné contre le maitre du Donjon! Recommencez pour être sur que ce n'est pas la chance du débutant!`;
   }
 }

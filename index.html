@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
@@ -12,46 +14,56 @@
 </head>
 
 <body>
-    <h1 class="text-white text-center display-5 mb-5">Bienvenue dans le Donjon magique</h1>
-
+    <header class="text-white text-center pb-5">
+        <h1 class="my-5 mx-5">Bienvenue dans le Donjon magique</h1>
+        <p class="my-5 mx-5 px-5"> ------ </p>
+        <p class="intro mx-5 px-5">
+            Bienvenue à toi jeune aventurier des temps modernes! <br> Tu viens de braver monts et merveilles pour
+            arriver jusqu'ici, bravo pour tes efforts! <br>
+            Le maître du Donjon n'aura aucun pitié pour toi! Alors choisis bien ton arme et ton
+            armure car une fois le combat lancé tu ne pourras pas faire marche arrière!
+        </p>
+    </header>
     <form id="choixPlayer">
-        <h2 class="text-center mb-5">Bienvenue à toi jeune aventurier, choisis une arme et une armure pour combattre le
-            maître
-            des lieux!</h2>
-        <div id="playerArme" class="border text-center p-4 mx-4">
+        <h2 class="text-white text-center">-- Préparation au combat --</h2>
+        <div id="playerArme" class="border rounded text-center mb-5 p-4 mx-5">
             <h3>Tu dois choisir une des armes ci-dessous pour affronter le maitre du Donjon:</h3>
             <input type="radio" name="choixArme" id="arme-1" data-title="arme bois" value="2">
-            <label for="arme-1">Arme bois</label>
+            <label for="arme-1"><img src="img/epeeB.png"><br>Arme bois</label>
 
             <input type="radio" name="choixArme" id="arme-2" data-title="arme fer" value="5">
-            <label for="arme-2">Arme fer</label>
+            <label for="arme-2"><img src="img/epeeF.png"><br>Arme fer</label>
 
             <input type="radio" name="choixArme" id="arme-3" data-title="arme magique" value="10">
-            <label for="arme-3">Arme magique</label>
+            <label for="arme-3"><img src="img/epeeM.png"><br>Arme magique</label>
         </div>
 
-        <div id="playerArmure" class="border text-center mt-3 p-4 mx-4">
+        <div id="playerArmure" class="border rounded text-center p-4 mx-5">
             <h3>Tu dois choisir une des armures ci-dessous pour affronter le maitre du Donjon:</h3>
             <input type="radio" name="choixArmure" id="armure-1" data-title="armure en bois" value="1">
-            <label for="armure-1">Armure en bois</label>
+            <label for="armure-1"><img src="img/armureB.png"><br>Armure en bois</label>
 
             <input type="radio" name="choixArmure" id="armure-2" data-title="armure en fer" value="3">
-            <label for="armure-2">Armure en fer</label>
+            <label for="armure-2"><img src="img/armureF.png"><br>Armure en fer</label>
 
             <input type="radio" name="choixArmure" id="armure-3" data-title="armure magique" value="5">
-            <label for="armure-3">Armure magique</label>
+            <label for="armure-3"><img src="img/armureM.png"><br>Armure magique</label>
         </div>
-        <button class="mt-4" type="submit">C'est parti!</button>
-        <p id="log" class="text-white text-center"></p>
+        <div class="btn">
+            <button class="mt-3 border" type="submit"><strong>C'est parti!<br> Que le
+                    combat commence!</strong></button>
+        </div>
+        <p id="log" class="text-white text-center my-5"></p>
     </form>
 
     <section id="tour">
-        <ul class="list list-unstyled text-center">
+        <ul class="list list-unstyled text-center text-white">
         </ul>
     </section>
 
-    <section id="resultat">
-        <h2></h2>
+    <section id="resultat" class="m-5">
+        <h2 class="text-center text-white"></h2>
+
 
     </section>
     <script src="jeu.js"></script>

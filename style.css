@@ -2,3 +2,34 @@ body {
   font-family: Arial, Helvetica;
   background-color: brown;
 }
+
+h1 {
+  font-family: "Press Start 2p";
+  font-size: 40px;
+}
+
+header p {
+  font-size: 20px;
+}
+
+.btn {
+  width: 100%;
+}
+
+button,
+#playerArme,
+#playerArmure {
+  background-color: white;
+}
+
+#playerArme img {
+  width: 100px;
+}
+
+#playerArmure img {
+  width: 100px;
+}
+
+#resultat h2 {
+  font-size: 20px;
+}
